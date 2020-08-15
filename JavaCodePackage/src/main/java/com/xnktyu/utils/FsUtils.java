@@ -9,6 +9,12 @@ import java.nio.charset.Charset;
 
 public class FsUtils
 {
+	public static void createDir(File dir)
+	{
+		if (!dir.exists())
+			dir.mkdirs();
+	}
+
 	public static byte[] readBytes(File file)
 	{
 		if (file.exists() && file.isFile())
