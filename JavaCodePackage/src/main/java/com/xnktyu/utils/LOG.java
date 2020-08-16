@@ -6,4 +6,9 @@ public class LOG
 	{
 		System.out.println(msg);
 	}
+
+	public static void e(Object msg)
+	{
+		System.err.println(msg);
+	}
 }

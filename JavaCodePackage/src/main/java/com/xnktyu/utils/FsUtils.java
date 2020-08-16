@@ -9,6 +9,25 @@ import java.nio.charset.Charset;
 
 public class FsUtils
 {
+	public static String getNameWithoutSuffix(File file)
+	{
+		return file.getName().substring(0, file.getName().lastIndexOf("."));
+	}
+
+	// 文件名不能含有特殊字符，否则写文件时会有问题
+	public static String checkFileName(String fileName)
+	{
+		return fileName.replace("\\", "") //
+				.replace("/", "") //
+				.replace(":", "") //
+				.replace("*", "") //
+				.replace("?", "") //
+				.replace("\"", "") //
+				.replace("<", "") //
+				.replace(">", "") //
+				.replace("|", "");
+	}
+
 	public static void createDir(File dir)
 	{
 		if (!dir.exists())
