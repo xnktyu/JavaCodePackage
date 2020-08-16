@@ -34,6 +34,12 @@
 			<version>4.7.2</version>
 		</dependency>
 
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.21</version>
+		</dependency>
+
 		<!--pdf相关-->
 		<dependency>
 			<groupId>org.apache.pdfbox</groupId>

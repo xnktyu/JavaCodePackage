@@ -15,6 +15,43 @@ import java.util.Map;
 
 public class CatchBookTable
 {
+	private static final DBHelper local_db = new DBHelper("localhost", "root", "flyint8", "dang");
+
+	private static class tbase
+	{
+		protected String pack(String field)
+		{
+			return field.toLowerCase();
+		}
+
+		@Override
+		public String toString()
+		{
+			return getClass().getSimpleName().toLowerCase();
+		}
+	}
+
+	private static final class t_book extends tbase
+	{
+		public final String bookId = pack("bookId");
+		public final String title = pack("title");
+		public final String author = pack("author");
+		public final String time = pack("time");
+		public final String vip_link = pack("vip_link");
+		public final String count_per = pack("count_per");
+		public final String word_count = pack("word_count");
+		public final String group = pack("group");
+		public final String publisher = pack("publisher");
+		public final String price = pack("price");
+		public final String url = pack("url");
+		public final String cover = pack("cover");
+		public final String des = pack("des");
+		public final String title_descript = pack("title_descript");
+	}
+
+	private static final t_book t_book = new t_book();
+
+
 	private static boolean catchDetail(String url, File dir, JSONObject detail, String bookId)
 	{
 		String text = HttpUtils.doHttpGet(url);
@@ -147,7 +184,7 @@ public class CatchBookTable
 						books.add(book);
 						bookMap.put(bookId, book);
 					}
-					Thread.sleep(4000);
+					Thread.sleep(3000);
 				}
 				catch (Exception e)
 				{
@@ -181,5 +218,62 @@ public class CatchBookTable
 				tmpMap.put(bookId, book);
 			}
 		}
+	}
+
+	public static void uploadRecord(File dir)
+	{
+		local_db.exeSql(String.format("create table if not exists %s(" + t_book.bookId + " varchar(100)" + //
+				", " + t_book.title + " text" + //
+				", " + t_book.author + " text" + //
+				", " + t_book.time + " date" + //
+				", " + t_book.vip_link + " tinyint" + //
+				", " + t_book.count_per + " int" + //
+				", " + t_book.word_count + " int" + //
+				", " + t_book.group + " text" + //
+				", " + t_book.publisher + " text" + //
+				", " + t_book.price + " float" + //
+				", " + t_book.url + " text" + //
+				", " + t_book.cover + " text" + //
+				", " + t_book.des + " text" + //
+				", " + t_book.title_descript + " text" + //
+				");", t_book), null);
+
+		dir.listFiles(new FileFilter()
+		{
+			public boolean accept(File file)
+			{
+				if (file.isFile())
+				{
+					if (file.getName().toLowerCase().endsWith(".json"))
+					{
+						JSONObject book = JsonHelper.getJSONObject(FsUtils.readText(file));
+						if (book != null)
+						{
+							if (!local_db.hasRecord(t_book, t_book.bookId, book.getString("bookId")))
+							{
+								local_db.insert(t_book, //
+										t_book.bookId, book.getString("bookId"), //
+										t_book.title, book.getString("title"), //
+										t_book.author, book.getString("author"), //
+										t_book.time, book.getString("time"), //
+										t_book.vip_link, book.getString("vip_link"), //
+										t_book.count_per, book.getString("count_per"), //
+										t_book.word_count, book.getString("word_count"), //
+										t_book.group, book.getString("group"), //
+										t_book.publisher, book.getString("publisher"), //
+										t_book.price, book.getString("price"), //
+										t_book.url, book.getString("url"), //
+										t_book.cover, book.getString("cover"), //
+										t_book.des, book.getString("des"), //
+										t_book.title_descript, book.getString("title_descript"));
+							}
+						}
+						else
+							LOG.e("read fail : " + file);
+					}
+				}
+				return false;
+			}
+		});
 	}
 }
