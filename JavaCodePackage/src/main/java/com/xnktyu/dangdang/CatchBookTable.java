@@ -155,8 +155,8 @@ public class CatchBookTable
 			}
 		}
 
-		File file = new File(htmlFile.getParentFile(), String.format("%s.json", FsUtils.getNameWithoutSuffix(htmlFile)));
-		FsUtils.writeText(file, books.toString());
+//		File file = new File(htmlFile.getParentFile(), String.format("%s.json", FsUtils.getNameWithoutSuffix(htmlFile)));
+//		FsUtils.writeText(file, books.toString());
 //		FsUtils.writeText(file, LOGJson.getStr(books.toString()));
 
 		LOG.v("books size : " + books.size());
