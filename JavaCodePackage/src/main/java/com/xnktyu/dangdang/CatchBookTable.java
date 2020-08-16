@@ -46,8 +46,8 @@ public class CatchBookTable
 		if (doc.select("#author").size() == 0)
 		{
 			LOG.e("error author : " + url);
-			File file = new File("D:\\wangzhiting\\work\\local\\book\\table\\tmp.txt");
-			FsUtils.writeText(file, doc.html());
+//			File file = new File("D:\\wangzhiting\\work\\local\\book\\table\\tmp.txt");
+//			FsUtils.writeText(file, doc.html());
 			return false;
 		}
 
@@ -104,7 +104,7 @@ public class CatchBookTable
 						JSONObject book = JsonHelper.getJSONObject(FsUtils.readText(file));
 						if (book != null)
 						{
-							books.add(bookMap.get(bookId));
+							books.add(book);
 							bookMap.put(bookId, book);
 						}
 						else
@@ -147,6 +147,7 @@ public class CatchBookTable
 						books.add(book);
 						bookMap.put(bookId, book);
 					}
+					Thread.sleep(4000);
 				}
 				catch (Exception e)
 				{
