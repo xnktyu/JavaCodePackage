@@ -28,6 +28,7 @@ public class CatchBookDir
 			Elements a = li.select("a").eq(0);
 			String pagecount = a.attr("pagecount");
 			String name = a.text().trim();
+			name = name.substring(0, name.length() - pagecount.length());
 
 			JSONObject dir = new JSONObject(true);
 			dir.put("level", Integer.valueOf(level.substring("level".length())));
@@ -52,7 +53,7 @@ public class CatchBookDir
 
 		Elements other_out = doc.select(".other-out").eq(0);
 		Elements title = other_out.select(".title").eq(0);
-		String bookName = title.text().trim();
+		String bookName = FsUtils.checkFileName(title.text().trim());
 		LOG.v(bookName);
 
 		File bookDir = new File(dir, bookName);
