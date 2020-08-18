@@ -21,7 +21,7 @@ public class CatchBookTable
 	{
 		protected String pack(String field)
 		{
-			return field.toLowerCase();
+			return "f_" + field.toLowerCase();
 		}
 
 		@Override
@@ -34,6 +34,7 @@ public class CatchBookTable
 	private static final class t_book extends tbase
 	{
 		public final String bookId = pack("bookId");
+		public final String note = pack("note");
 		public final String title = pack("title");
 		public final String author = pack("author");
 		public final String time = pack("time");
@@ -118,6 +119,8 @@ public class CatchBookTable
 
 	public static void catchTable(File htmlFile)
 	{
+		LOG.v(htmlFile);
+
 		File dir = new File(htmlFile.getParentFile(), FsUtils.getNameWithoutSuffix(htmlFile));
 
 		String text = FsUtils.readText(htmlFile);
@@ -170,9 +173,16 @@ public class CatchBookTable
 				{
 					Elements bookinfo = a.select(".bookinfo");
 					String priceStr = bookinfo.select(".now").text().trim();
-					if (priceStr.startsWith("促销价:"))
-						priceStr = priceStr.substring("促销价:".length());
-					priceStr = priceStr.substring("￥".length());
+					if (priceStr.equals("免费"))
+					{
+						priceStr = "0";
+					}
+					else
+					{
+						if (priceStr.startsWith("促销价:"))
+							priceStr = priceStr.substring("促销价:".length());
+						priceStr = priceStr.substring("￥".length());
+					}
 					Float price = Float.valueOf(priceStr);
 					String des = bookinfo.select(".des").text().trim();
 
@@ -201,28 +211,48 @@ public class CatchBookTable
 		LOG.v("bookMap size : " + bookMap.size());
 
 		// 检测重复
-		Map<String, JSONObject> tmpMap = new HashMap<String, JSONObject>();
-		for (int i = 0; i < books.size(); i++)
-		{
-			JSONObject book = books.getJSONObject(i);
-
-			String bookId = book.getString("bookId");
-			if (tmpMap.containsKey(bookId))
-			{
-				LOG.v("find repeat");
-				LOGJson.log(book.toString());
-				LOGJson.log(tmpMap.get(bookId).toString());
-			}
-			else
-			{
-				tmpMap.put(bookId, book);
-			}
-		}
+//		Map<String, JSONObject> tmpMap = new HashMap<String, JSONObject>();
+//		for (int i = 0; i < books.size(); i++)
+//		{
+//			JSONObject book = books.getJSONObject(i);
+//
+//			String bookId = book.getString("bookId");
+//			if (tmpMap.containsKey(bookId))
+//			{
+//				LOG.v("find repeat");
+//				LOGJson.log(book.toString());
+//				LOGJson.log(tmpMap.get(bookId).toString());
+//			}
+//			else
+//			{
+//				tmpMap.put(bookId, book);
+//			}
+//		}
 	}
 
-	public static void uploadRecord(File dir)
+	private static Integer parseCount(String countStr)
 	{
+		if (!TextUtils.isEmpty(countStr))
+		{
+			if (countStr.endsWith("万"))
+			{
+				countStr = countStr.substring(0, countStr.length() - "万".length());
+				return (int) (Float.valueOf(countStr) * 10000);
+			}
+			else
+				return Integer.valueOf(countStr);
+		}
+		return 0;
+	}
+
+	public static void uploadRecord(File htmlFile)
+	{
+		LOG.v(htmlFile);
+
+		File dir = new File(htmlFile.getParentFile(), FsUtils.getNameWithoutSuffix(htmlFile));
+
 		local_db.exeSql(String.format("create table if not exists %s(" + t_book.bookId + " varchar(100)" + //
+				", " + t_book.note + " text" + //
 				", " + t_book.title + " text" + //
 				", " + t_book.author + " text" + //
 				", " + t_book.time + " date" + //
@@ -251,14 +281,18 @@ public class CatchBookTable
 						{
 							if (!local_db.hasRecord(t_book, t_book.bookId, book.getString("bookId")))
 							{
-								local_db.insert(t_book, //
+								String time = book.getString("time");
+								if (TextUtils.isEmpty(time))
+									time = "1970-01-01";
+								String count_per = book.getString("count_per");
+								boolean success = local_db.insert(t_book, //
 										t_book.bookId, book.getString("bookId"), //
 										t_book.title, book.getString("title"), //
 										t_book.author, book.getString("author"), //
-										t_book.time, book.getString("time"), //
-										t_book.vip_link, book.getString("vip_link"), //
-										t_book.count_per, book.getString("count_per"), //
-										t_book.word_count, book.getString("word_count"), //
+										t_book.time, time, //
+										t_book.vip_link, book.getBoolean("vip_link") ? 1 : 0, //
+										t_book.count_per, parseCount(count_per.substring(0, count_per.indexOf("人正在读"))), //
+										t_book.word_count, parseCount(book.getString("word_count")), //
 										t_book.group, book.getString("group"), //
 										t_book.publisher, book.getString("publisher"), //
 										t_book.price, book.getString("price"), //
@@ -266,6 +300,10 @@ public class CatchBookTable
 										t_book.cover, book.getString("cover"), //
 										t_book.des, book.getString("des"), //
 										t_book.title_descript, book.getString("title_descript"));
+								if (!success)
+								{
+									LOGJson.log(book.toString());
+								}
 							}
 						}
 						else
