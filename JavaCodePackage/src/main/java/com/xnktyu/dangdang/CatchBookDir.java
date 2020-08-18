@@ -51,18 +51,23 @@ public class CatchBookDir
 //		File tmpFile = new File(dir, "tmp.html");
 //		FsUtils.writeText(tmpFile, doc.html());
 
+		String href = doc.select("#ddclick-tool-left-book-link").attr("href").trim();
+		String bookId = href.substring(href.lastIndexOf("/") + 1, href.lastIndexOf("."));
+
 		Elements other_out = doc.select(".other-out").eq(0);
 		Elements title = other_out.select(".title").eq(0);
 		String bookName = FsUtils.checkFileName(title.text().trim());
-		LOG.v(bookName);
 
-		File bookDir = new File(dir, bookName);
+		LOG.v(bookId + bookName);
+
+		File bookDir = new File(dir, bookId + bookName);
 		FsUtils.createDir(bookDir);
 
 		Elements cata_list = other_out.select(".cata-list").eq(0);
 
 		File markFile = new File(bookDir, "mark.json");
 		JSONObject book = new JSONObject(true);
+		book.put("bookId", bookId);
 		book.put("name", bookName);
 		book.put("dirs", genDirData(cata_list));
 		FsUtils.writeText(markFile, LOGJson.getStr(book.toString(), 2));

@@ -5,6 +5,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.xnktyu.utils.FsUtils;
 import com.xnktyu.utils.JsonHelper;
 import com.xnktyu.utils.LOGJson;
+import com.xnktyu.utils.TextUtils;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.pdmodel.PDPageContentStream;
@@ -56,7 +57,7 @@ public class Image2Pdf
 	 * @param pageOffset
 	 * @param outline
 	 */
-	private static void addMark(File bookDir, Integer pageOffset, PDDocumentOutline outline)
+	private static String addMark(File bookDir, Integer pageOffset, PDDocumentOutline outline)
 	{
 		JSONObject book;
 		File markFile = new File(bookDir, "mark.json");
@@ -125,6 +126,8 @@ public class Image2Pdf
 		}
 
 		addBookmark(outline, dirTree);
+
+		return book.getString("bookId");
 	}
 
 	/**
@@ -191,11 +194,15 @@ public class Image2Pdf
 				document.addPage(page);
 			}
 			PDDocumentOutline outline = new PDDocumentOutline();
-			addMark(bookDir, pageOffset, outline);
+			String bookId = addMark(bookDir, pageOffset, outline);
+			if (!TextUtils.isEmpty(bookId) && bookName.startsWith(bookId))
+				bookName = bookName.substring(bookId.length());
 			document.getDocumentCatalog().setDocumentOutline(outline);
 			File outFile = new File(bookDir, bookName + ".pdf");
 			document.save(outFile);
 			document.close();
+
+			bookDir.renameTo(new File(bookDir.getParentFile(), bookName));
 		}
 		catch (IOException e)
 		{
