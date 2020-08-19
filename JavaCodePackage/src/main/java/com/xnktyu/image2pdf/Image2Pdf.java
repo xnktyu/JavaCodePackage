@@ -5,7 +5,6 @@ import com.alibaba.fastjson.JSONObject;
 import com.xnktyu.utils.FsUtils;
 import com.xnktyu.utils.JsonHelper;
 import com.xnktyu.utils.LOGJson;
-import com.xnktyu.utils.TextUtils;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.pdmodel.PDPageContentStream;
@@ -195,14 +194,16 @@ public class Image2Pdf
 			}
 			PDDocumentOutline outline = new PDDocumentOutline();
 			String bookId = addMark(bookDir, pageOffset, outline);
-			if (!TextUtils.isEmpty(bookId) && bookName.startsWith(bookId))
-				bookName = bookName.substring(bookId.length());
+//			if (!TextUtils.isEmpty(bookId) && bookName.startsWith(bookId))
+//				bookName = bookName.substring(bookId.length());
 			document.getDocumentCatalog().setDocumentOutline(outline);
-			File outFile = new File(bookDir, bookName + ".pdf");
+			File pdfDir = new File(bookDir.getParentFile(), "pdf");
+			FsUtils.createDir(pdfDir);
+			File outFile = new File(pdfDir, bookName + ".pdf");
 			document.save(outFile);
 			document.close();
 
-			bookDir.renameTo(new File(bookDir.getParentFile(), bookName));
+//			bookDir.renameTo(new File(bookDir.getParentFile(), bookName));
 		}
 		catch (IOException e)
 		{

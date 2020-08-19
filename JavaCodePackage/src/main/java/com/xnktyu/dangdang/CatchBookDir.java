@@ -60,7 +60,7 @@ public class CatchBookDir
 
 		LOG.v(bookId + bookName);
 
-		File bookDir = new File(dir, bookId + bookName);
+		File bookDir = new File(dir, bookName);
 		FsUtils.createDir(bookDir);
 
 		Elements cata_list = other_out.select(".cata-list").eq(0);
