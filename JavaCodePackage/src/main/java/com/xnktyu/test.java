@@ -1,13 +1,29 @@
 package com.xnktyu;
 
-import com.xnktyu.dangdang.CatchBookDir;
-import com.xnktyu.dangdang.CatchBookTable;
 import com.xnktyu.image2pdf.Image2Pdf;
+import com.xnktyu.utils.LOG;
 
 import java.io.File;
+import java.io.FileFilter;
 
 public class test
 {
+	public static void genPdf(File dir)
+	{
+		dir.listFiles(new FileFilter()
+		{
+			public boolean accept(File file)
+			{
+				if (file.isDirectory() && !file.getName().equals("pdf") && !file.getName().equals("table"))
+				{
+					LOG.v(file);
+					Image2Pdf.convert(file, 0);
+				}
+				return false;
+			}
+		});
+	}
+
 	public static void main(String args[])
 	{
 //		CatchBookTable.uploadRecord(new File("D:\\wangzhiting\\work\\local\\book\\table\\计算机教材.txt"));
@@ -18,6 +34,6 @@ public class test
 //		CatchBookTable.uploadRecord(new File("D:\\wangzhiting\\work\\local\\book\\table\\硬件.txt"));
 
 //		CatchBookDir.catchDir(new File("D:\\wangzhiting\\work\\local\\book\\tmp.html"), new File("D:\\wangzhiting\\work\\local\\book"));
-		Image2Pdf.convert(new File("D:\\wangzhiting\\work\\local\\book\\Android进阶之光"), 0);
+		genPdf(new File("D:\\wangzhiting\\work\\local\\book"));
 	}
 }

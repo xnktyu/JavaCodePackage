@@ -142,6 +142,11 @@ public class Image2Pdf
 		if (!bookDir.isDirectory())
 			return;
 		String bookName = bookDir.getName();
+		File pdfDir = new File(bookDir.getParentFile(), "pdf");
+		FsUtils.createDir(pdfDir);
+		File outFile = new File(pdfDir, bookName + ".pdf");
+		if (outFile.exists())
+			return;
 		final List<File> fileList = new ArrayList<File>();
 		bookDir.listFiles(new FileFilter()
 		{
@@ -197,9 +202,6 @@ public class Image2Pdf
 //			if (!TextUtils.isEmpty(bookId) && bookName.startsWith(bookId))
 //				bookName = bookName.substring(bookId.length());
 			document.getDocumentCatalog().setDocumentOutline(outline);
-			File pdfDir = new File(bookDir.getParentFile(), "pdf");
-			FsUtils.createDir(pdfDir);
-			File outFile = new File(pdfDir, bookName + ".pdf");
 			document.save(outFile);
 			document.close();
 
