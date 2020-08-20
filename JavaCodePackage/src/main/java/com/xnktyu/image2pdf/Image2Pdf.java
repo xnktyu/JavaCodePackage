@@ -2,6 +2,7 @@ package com.xnktyu.image2pdf;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import com.xnktyu.dangdang.CatchBookTable;
 import com.xnktyu.utils.FsUtils;
 import com.xnktyu.utils.JsonHelper;
 import com.xnktyu.utils.LOGJson;
@@ -49,6 +50,17 @@ public class Image2Pdf
 		}
 	}
 
+	private static String getBookId(File bookDir)
+	{
+		File markFile = new File(bookDir, "mark.json");
+		if (markFile.exists())
+		{
+			JSONObject book = JsonHelper.getJSONObject(FsUtils.readText(markFile));
+			return book.getString("bookId");
+		}
+		return null;
+	}
+
 	/**
 	 * 根据mark.json添加书签
 	 *
@@ -56,7 +68,7 @@ public class Image2Pdf
 	 * @param pageOffset
 	 * @param outline
 	 */
-	private static String addMark(File bookDir, Integer pageOffset, PDDocumentOutline outline)
+	private static void addMark(File bookDir, Integer pageOffset, PDDocumentOutline outline)
 	{
 		JSONObject book;
 		File markFile = new File(bookDir, "mark.json");
@@ -125,8 +137,6 @@ public class Image2Pdf
 		}
 
 		addBookmark(outline, dirTree);
-
-		return book.getString("bookId");
 	}
 
 	/**
@@ -146,7 +156,10 @@ public class Image2Pdf
 		FsUtils.createDir(pdfDir);
 		File outFile = new File(pdfDir, bookName + ".pdf");
 		if (outFile.exists())
+		{
+			CatchBookTable.updateNote(getBookId(bookDir), "catched");
 			return;
+		}
 		final List<File> fileList = new ArrayList<File>();
 		bookDir.listFiles(new FileFilter()
 		{
@@ -198,14 +211,12 @@ public class Image2Pdf
 				document.addPage(page);
 			}
 			PDDocumentOutline outline = new PDDocumentOutline();
-			String bookId = addMark(bookDir, pageOffset, outline);
-//			if (!TextUtils.isEmpty(bookId) && bookName.startsWith(bookId))
-//				bookName = bookName.substring(bookId.length());
+			addMark(bookDir, pageOffset, outline);
 			document.getDocumentCatalog().setDocumentOutline(outline);
 			document.save(outFile);
 			document.close();
 
-//			bookDir.renameTo(new File(bookDir.getParentFile(), bookName));
+			CatchBookTable.updateNote(getBookId(bookDir), "catched");
 		}
 		catch (IOException e)
 		{

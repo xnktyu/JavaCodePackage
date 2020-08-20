@@ -314,4 +314,9 @@ public class CatchBookTable
 			}
 		});
 	}
+
+	public static void updateNote(String bookId, String note)
+	{
+		local_db.update(t_book, DBHelper.set(t_book.note, note), t_book.bookId, bookId);
+	}
 }

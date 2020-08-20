@@ -71,5 +71,7 @@ public class CatchBookDir
 		book.put("name", bookName);
 		book.put("dirs", genDirData(cata_list));
 		FsUtils.writeText(markFile, LOGJson.getStr(book.toString(), 2));
+
+		CatchBookTable.updateNote(bookId, "added");
 	}
 }

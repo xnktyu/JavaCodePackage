@@ -1,5 +1,6 @@
 package com.xnktyu;
 
+import com.xnktyu.dangdang.CatchBookDir;
 import com.xnktyu.image2pdf.Image2Pdf;
 import com.xnktyu.utils.LOG;
 
@@ -33,7 +34,7 @@ public class test
 //		CatchBookTable.uploadRecord(new File("D:\\wangzhiting\\work\\local\\book\\table\\软件系统.txt"));
 //		CatchBookTable.uploadRecord(new File("D:\\wangzhiting\\work\\local\\book\\table\\硬件.txt"));
 
-//		CatchBookDir.catchDir(new File("D:\\wangzhiting\\work\\local\\book\\tmp.html"), new File("D:\\wangzhiting\\work\\local\\book"));
-		genPdf(new File("D:\\wangzhiting\\work\\local\\book"));
+		CatchBookDir.catchDir(new File("D:\\wangzhiting\\work\\local\\book\\tmp.html"), new File("D:\\wangzhiting\\work\\local\\book"));
+//		genPdf(new File("D:\\wangzhiting\\work\\local\\book"));
 	}
 }
