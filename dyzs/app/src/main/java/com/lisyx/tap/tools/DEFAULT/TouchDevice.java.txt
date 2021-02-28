@@ -1,0 +1,42 @@
+package com.lisyx.tap.tools.DEFAULT;
+
+import com.lisyx.tap.tools.TouchBase;
+
+import java.util.ArrayList;
+
+public class TouchDevice extends TouchBase
+{
+	@Override
+	public ArrayList<String> touchDown(int x, int y)
+	{
+		return null;
+	}
+
+	@Override
+	public ArrayList<String> touchMove(int x, int y)
+	{
+		return null;
+	}
+
+	@Override
+	public ArrayList<String> touchUp()
+	{
+		return null;
+	}
+
+	@Override
+	public ArrayList<String> tap(int x, int y)
+	{
+		ArrayList<String> list = new ArrayList<>();
+		list.add(String.format("input tap %s %s", x, y));
+		return list;
+	}
+
+	@Override
+	public ArrayList<String> swipe(int x1, int y1, int x2, int y2, int space)
+	{
+		ArrayList<String> list = new ArrayList<>();
+		list.add(String.format("input swipe %s %s %s %s", x1, y1, x2, y2));
+		return list;
+	}
+}

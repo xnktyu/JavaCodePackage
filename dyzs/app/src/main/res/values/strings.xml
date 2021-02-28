@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">抖音助手</string>
+	<string name="dy_accessibility_service_label">抖音助手</string>
+	<string name="dy_accessibility_service_description">开启抖音助手无障碍服务，才可以正常使用。</string>
+</resources>

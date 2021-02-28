@@ -1,0 +1,49 @@
+package com.lisyx.tap.tools.HUAWEIP7L07;
+
+import com.lisyx.tap.tools.TouchBase;
+
+import java.util.ArrayList;
+
+public class TouchDevice extends TouchBase
+{
+	@Override
+	public ArrayList<String> touchDown(int x, int y)
+	{
+		int touchId = 174;
+		ArrayList<String> list = new ArrayList<>();
+		list.add("sendevent /dev/input/event9 3 58 " + touchId);
+		list.add("sendevent /dev/input/event9 3 53 " + x);
+		list.add("sendevent /dev/input/event9 3 54 " + y);
+		list.add("sendevent /dev/input/event9 3 57 0");
+		list.add("sendevent /dev/input/event9 0 2 0");
+		list.add("sendevent /dev/input/event9 1 330 1");
+		list.add("sendevent /dev/input/event9 0 0 0");
+//		list.add("sleep 0.05");
+		return list;
+	}
+
+	@Override
+	public ArrayList<String> touchMove(int x, int y)
+	{
+		int touchId = 81;
+		ArrayList<String> list = new ArrayList<>();
+		list.add("sendevent /dev/input/event9 3 58 " + touchId);
+		list.add("sendevent /dev/input/event9 3 53 " + x);
+		list.add("sendevent /dev/input/event9 3 54 " + y);
+		list.add("sendevent /dev/input/event9 3 57 0");
+		list.add("sendevent /dev/input/event9 0 2 0");
+		list.add("sendevent /dev/input/event9 0 0 0");
+//		list.add("sleep 0.05");
+		return list;
+	}
+
+	@Override
+	public ArrayList<String> touchUp()
+	{
+		ArrayList<String> list = new ArrayList<>();
+		list.add("sendevent /dev/input/event9 0 2 0");
+		list.add("sendevent /dev/input/event9 1 330 0");
+		list.add("sendevent /dev/input/event9 0 0 0");
+		return list;
+	}
+}

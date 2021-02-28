@@ -1,0 +1,40 @@
+package com.lisyx.tap.tools.HUAWEIVNSAL00;
+
+import com.lisyx.tap.tools.TouchBase;
+
+import java.util.ArrayList;
+
+public class TouchDevice extends TouchBase
+{
+	@Override
+	public ArrayList<String> touchDown(int x, int y)
+	{
+		ArrayList<String> list = new ArrayList<>();
+		list.add("sendevent /dev/input/event4 3 57 490");
+		list.add("sendevent /dev/input/event4 1 330 1");
+		list.add("sendevent /dev/input/event4 3 53 " + x);
+		list.add("sendevent /dev/input/event4 3 54 " + y);
+		list.add("sendevent /dev/input/event4 0 0 0");
+		return list;
+	}
+
+	@Override
+	public ArrayList<String> touchMove(int x, int y)
+	{
+		ArrayList<String> list = new ArrayList<>();
+		list.add("sendevent /dev/input/event4 3 53 " + x);
+		list.add("sendevent /dev/input/event4 3 54 " + y);
+		list.add("sendevent /dev/input/event4 0 0 0");
+		return list;
+	}
+
+	@Override
+	public ArrayList<String> touchUp()
+	{
+		ArrayList<String> list = new ArrayList<>();
+		list.add("sendevent /dev/input/event4 3 57 -1");
+		list.add("sendevent /dev/input/event4 1 330 0");
+		list.add("sendevent /dev/input/event4 0 0 0");
+		return list;
+	}
+}

@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="#fff">
+
+	<ScrollView
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:gravity="left"
+			android:orientation="vertical"
+			android:padding="10dp">
+
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:gravity="center"
+				android:paddingTop="10dp"
+				android:text="QQ私信"
+				android:textColor="#99d2f9"
+				android:textSize="20sp"/>
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="10dp"
+				android:text="私信个数："
+				android:textColor="#000"
+				android:textSize="18sp"/>
+
+			<EditText
+				android:id="@+id/shixingCount"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="5dp"
+				android:layout_marginBottom="5dp"
+				android:background="@drawable/edit_bg"
+				android:gravity="left"
+				android:inputType="number"
+				android:paddingLeft="10dp"
+				android:paddingTop="5dp"
+				android:paddingRight="10dp"
+				android:paddingBottom="5dp"
+				android:text="10000"
+				android:textColor="#000"
+				android:textSize="18sp"/>
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="10dp"
+				android:text="运行速度（秒）："
+				android:textColor="#000"
+				android:textSize="18sp"/>
+
+			<EditText
+				android:id="@+id/runSpeed"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="5dp"
+				android:layout_marginBottom="5dp"
+				android:background="@drawable/edit_bg"
+				android:gravity="left"
+				android:inputType="number"
+				android:paddingLeft="10dp"
+				android:paddingTop="5dp"
+				android:paddingRight="10dp"
+				android:paddingBottom="5dp"
+				android:text="10000"
+				android:textColor="#000"
+				android:textSize="18sp"/>
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="10dp"
+				android:text="群号："
+				android:textColor="#000"
+				android:textSize="18sp"/>
+
+			<EditText
+				android:id="@+id/qunCode"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="5dp"
+				android:layout_marginBottom="5dp"
+				android:background="@drawable/edit_bg"
+				android:gravity="left"
+				android:inputType="textPersonName"
+				android:paddingLeft="10dp"
+				android:paddingTop="5dp"
+				android:paddingRight="10dp"
+				android:paddingBottom="5dp"
+				android:text="10000"
+				android:textColor="#000"
+				android:textSize="18sp"/>
+
+			<!--			<TextView-->
+			<!--				android:layout_width="wrap_content"-->
+			<!--				android:layout_height="wrap_content"-->
+			<!--				android:layout_marginTop="10dp"-->
+			<!--				android:text="群索引："-->
+			<!--				android:textColor="#000"-->
+			<!--				android:textSize="18sp"/>-->
+
+			<!--			<EditText-->
+			<!--				android:id="@+id/qunIndex"-->
+			<!--				android:layout_width="match_parent"-->
+			<!--				android:layout_height="wrap_content"-->
+			<!--				android:layout_marginTop="5dp"-->
+			<!--				android:layout_marginBottom="5dp"-->
+			<!--				android:background="@drawable/edit_bg"-->
+			<!--				android:gravity="left"-->
+			<!--				android:inputType="number"-->
+			<!--				android:paddingLeft="10dp"-->
+			<!--				android:paddingTop="5dp"-->
+			<!--				android:paddingRight="10dp"-->
+			<!--				android:paddingBottom="5dp"-->
+			<!--				android:text="10000"-->
+			<!--				android:textColor="#000"-->
+			<!--				android:textSize="18sp"/>-->
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="10dp"
+				android:text="成员索引："
+				android:textColor="#000"
+				android:textSize="18sp"/>
+
+			<EditText
+				android:id="@+id/memberIndex"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="5dp"
+				android:layout_marginBottom="5dp"
+				android:background="@drawable/edit_bg"
+				android:gravity="left"
+				android:inputType="number"
+				android:paddingLeft="10dp"
+				android:paddingTop="5dp"
+				android:paddingRight="10dp"
+				android:paddingBottom="5dp"
+				android:text="10000"
+				android:textColor="#000"
+				android:textSize="18sp"/>
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="10dp"
+				android:text="话术设置："
+				android:textColor="#000"
+				android:textSize="18sp"/>
+
+			<EditText
+				android:id="@+id/msg0"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="5dp"
+				android:layout_marginBottom="5dp"
+				android:background="@drawable/edit_bg"
+				android:gravity="left"
+				android:inputType="textMultiLine"
+				android:paddingLeft="10dp"
+				android:paddingTop="5dp"
+				android:paddingRight="10dp"
+				android:paddingBottom="5dp"
+				android:text="文本文本文本文本"
+				android:textColor="#000"
+				android:textSize="18sp"/>
+
+			<EditText
+				android:id="@+id/msg1"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="5dp"
+				android:layout_marginBottom="5dp"
+				android:background="@drawable/edit_bg"
+				android:gravity="left"
+				android:inputType="textMultiLine"
+				android:paddingLeft="10dp"
+				android:paddingTop="5dp"
+				android:paddingRight="10dp"
+				android:paddingBottom="5dp"
+				android:text="文本文本文本文本"
+				android:textColor="#000"
+				android:textSize="18sp"/>
+
+			<EditText
+				android:id="@+id/msg2"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="5dp"
+				android:layout_marginBottom="5dp"
+				android:background="@drawable/edit_bg"
+				android:gravity="left"
+				android:inputType="textMultiLine"
+				android:paddingLeft="10dp"
+				android:paddingTop="5dp"
+				android:paddingRight="10dp"
+				android:paddingBottom="5dp"
+				android:text="文本文本文本文本"
+				android:textColor="#000"
+				android:textSize="18sp"/>
+
+			<EditText
+				android:id="@+id/msg3"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="5dp"
+				android:layout_marginBottom="5dp"
+				android:background="@drawable/edit_bg"
+				android:gravity="left"
+				android:inputType="textMultiLine"
+				android:paddingLeft="10dp"
+				android:paddingTop="5dp"
+				android:paddingRight="10dp"
+				android:paddingBottom="5dp"
+				android:text="文本文本文本文本"
+				android:textColor="#000"
+				android:textSize="18sp"/>
+
+			<EditText
+				android:id="@+id/msg4"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="5dp"
+				android:layout_marginBottom="5dp"
+				android:background="@drawable/edit_bg"
+				android:gravity="left"
+				android:inputType="textMultiLine"
+				android:paddingLeft="10dp"
+				android:paddingTop="5dp"
+				android:paddingRight="10dp"
+				android:paddingBottom="5dp"
+				android:text="文本文本文本文本"
+				android:textColor="#000"
+				android:textSize="18sp"/>
+
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:gravity="center"
+				android:paddingTop="10dp"
+				android:text="使用说明"
+				android:textColor="#99d2f9"
+				android:textSize="20sp"/>
+
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:padding="10dp"
+				android:text="1、在以下界面运行此功能"
+				android:textColor="#000"
+				android:textSize="16sp"/>
+
+			<ImageView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:src="@drawable/img_dummy_000"/>
+
+		</LinearLayout>
+	</ScrollView>
+
+</RelativeLayout>

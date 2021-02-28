@@ -1,0 +1,69 @@
+package com.lisyx.tap.tools;
+
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+
+import com.lisyx.tap.utils.LOG;
+
+import java.io.File;
+import java.util.ArrayList;
+
+public class ImageFindGuanZhuBtn
+{
+	private static int to444Bit(int px)
+	{
+		return px & 0xfff0f0f0;
+	}
+
+	public static final String flagStr_QuGuan_1080 = "101020-101020-101020-101020-101020-101020-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-303040-101020-101020-101020-101020-101020-101020-101020-";
+
+	public static final String flagStr_BothGuan_1080 = "101020-101020-101020-101020-101020-101020-E02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-201020-101020-101020-101020-101020-101020-101020-";
+
+	public static ArrayList<Integer> find(File file, int x, String flagStr)
+	{
+		ArrayList<Integer> findPosList = new ArrayList<Integer>();
+		try
+		{
+			Bitmap image = BitmapFactory.decodeFile(file.toString());
+
+			StringBuilder sb = new StringBuilder();
+
+			for (int y = 0; y < image.getHeight(); y++)
+			{
+				int px = image.getPixel(x, y);
+				px = to444Bit(px);
+				sb.append(String.format("%06X-", px & 0x00ffffff));
+			}
+
+//			LOG.v(sb.toString());
+
+			String str = sb.toString();
+			int yBase = 0;
+			while (true)
+			{
+				int pos = str.indexOf(flagStr);
+				if (pos >= 0)
+				{
+//					LOG.v("pos : " + pos);
+					int index = pos / 7;
+//					LOG.v("index : " + index);
+					int findPos = yBase + index;
+					LOG.v("findPos : " + findPos);
+					findPosList.add(findPos);
+					str = str.substring(pos + flagStr.length());
+					yBase += (index + flagStr.length() / 7);
+				}
+				else
+				{
+					break;
+				}
+			}
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+		return findPosList;
+	}
+
+}

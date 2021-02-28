@@ -1,0 +1,55 @@
+package com.lisyx.tap.tools;
+
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+
+import com.lisyx.tap.utils.LOG;
+
+import java.io.File;
+
+public class ImageFindPrivateMsgSendBtn
+{
+	private static int to444Bit(int px)
+	{
+		return px & 0xfff0f0f0;
+	}
+
+	public static final String flagStr_1080 = "F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-F02050-";
+
+	public static int find(File file, int x, int yfrom, String flagStr)
+	{
+		int findPos = -1;
+		try
+		{
+			Bitmap image = BitmapFactory.decodeFile(file.toString());
+
+			StringBuilder sb = new StringBuilder();
+
+			for (int y = yfrom; y < image.getHeight(); y++)
+			{
+				int px = image.getPixel(x, y);
+				px = to444Bit(px);
+				sb.append(String.format("%06X-", px & 0x00ffffff));
+			}
+
+//			LOG.v(sb.toString());
+
+			int pos = sb.toString().indexOf(flagStr);
+
+			if (pos >= 0)
+			{
+//				LOG.v("pos : " + pos);
+				int index = pos / 7;
+//				LOG.v("index : " + index);
+				findPos = yfrom + index;
+				LOG.v("findPos : " + findPos);
+			}
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+		return findPos;
+	}
+
+}

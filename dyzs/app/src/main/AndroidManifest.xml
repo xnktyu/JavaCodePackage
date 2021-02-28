@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+		  xmlns:tools="http://schemas.android.com/tools"
+		  package="com.lisyx.tap">
+
+	<uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
+
+	<uses-permission android:name="android.permission.INTERNET"/>
+	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+	<uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+	<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+
+	<uses-permission
+		android:name="android.permission.BIND_ACCESSIBILITY_SERVICE"
+		tools:ignore="ProtectedPermissions"/>
+
+	<application
+		android:name="com.lisyx.tap.App"
+		android:allowBackup="true"
+		android:icon="@drawable/ic_launcher"
+		android:label="@string/app_name"
+		android:networkSecurityConfig="@xml/network_security_config"
+		android:roundIcon="@drawable/ic_launcher"
+		android:supportsRtl="true"
+		android:theme="@style/AppTheme">
+
+		<meta-data
+			android:name="UMENG_APPKEY"
+			android:value="5ef7f265570df31904000152"/>
+
+		<!--主版本-->
+		<meta-data
+			android:name="UMENG_CHANNEL"
+			android:value="main"/>
+
+		<activity
+			android:name="com.lisyx.tap.activity.ActivityMain"
+			android:launchMode="singleInstance"
+			android:screenOrientation="portrait"
+			android:windowSoftInputMode="stateHidden"
+			tools:ignore="LockedOrientationActivity">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN"/>
+				<category android:name="android.intent.category.LAUNCHER"/>
+			</intent-filter>
+		</activity>
+
+		<activity
+			android:name="com.lisyx.tap.activity.ActivityFullPlay"
+			android:screenOrientation="portrait"
+			tools:ignore="LockedOrientationActivity">
+		</activity>
+
+		<activity
+			android:name="com.lisyx.tap.activity.ActivityInfos"
+			android:screenOrientation="portrait"
+			tools:ignore="LockedOrientationActivity">
+		</activity>
+
+		<activity
+			android:name="com.lisyx.tap.activity.ActivityTeach"
+			android:screenOrientation="portrait"
+			tools:ignore="LockedOrientationActivity">
+		</activity>
+
+		<activity
+			android:name="com.lisyx.tap.activity.ActivityDevice"
+			android:screenOrientation="portrait"
+			android:windowSoftInputMode="stateHidden"
+			tools:ignore="LockedOrientationActivity">
+		</activity>
+
+		<activity
+			android:name="com.lisyx.tap.activity.ActivityDyYingLiu"
+			android:screenOrientation="portrait"
+			android:windowSoftInputMode="stateHidden"
+			tools:ignore="LockedOrientationActivity">
+		</activity>
+
+		<activity
+			android:name="com.lisyx.tap.activity.ActivityDyYangHao"
+			android:screenOrientation="portrait"
+			android:windowSoftInputMode="stateHidden"
+			tools:ignore="LockedOrientationActivity">
+		</activity>
+
+		<activity
+			android:name="com.lisyx.tap.activity.ActivityDyQuGuan"
+			android:screenOrientation="portrait"
+			android:windowSoftInputMode="stateHidden"
+			tools:ignore="LockedOrientationActivity">
+		</activity>
+
+		<activity
+			android:name="com.lisyx.tap.activity.ActivityDyBothGuan"
+			android:screenOrientation="portrait"
+			android:windowSoftInputMode="stateHidden"
+			tools:ignore="LockedOrientationActivity">
+		</activity>
+
+		<activity
+			android:name="com.lisyx.tap.activity.ActivityDyFenGuan"
+			android:screenOrientation="portrait"
+			android:windowSoftInputMode="stateHidden"
+			tools:ignore="LockedOrientationActivity">
+		</activity>
+
+		<activity
+			android:name="com.lisyx.tap.activity.ActivityDyShiXing"
+			android:screenOrientation="portrait"
+			android:windowSoftInputMode="stateHidden"
+			tools:ignore="LockedOrientationActivity">
+		</activity>
+
+		<activity
+			android:name="com.lisyx.tap.activity.ActivityDyPingXing"
+			android:screenOrientation="portrait"
+			android:windowSoftInputMode="stateHidden"
+			tools:ignore="LockedOrientationActivity">
+		</activity>
+
+		<activity
+			android:name="com.lisyx.tap.activity.ActivityDyLive"
+			android:screenOrientation="portrait"
+			android:windowSoftInputMode="stateHidden"
+			tools:ignore="LockedOrientationActivity">
+		</activity>
+
+		<activity
+			android:name="com.lisyx.tap.activity.ActivityQQShiXing"
+			android:screenOrientation="portrait"
+			android:windowSoftInputMode="stateHidden"
+			tools:ignore="LockedOrientationActivity">
+		</activity>
+
+		<activity
+			android:name="com.lisyx.tap.activity.ActivityDummy001"
+			android:screenOrientation="portrait"
+			android:windowSoftInputMode="stateHidden"
+			tools:ignore="LockedOrientationActivity">
+		</activity>
+
+		<activity
+			android:name="com.lisyx.tap.activity.ActivityDummy002"
+			android:screenOrientation="portrait"
+			android:windowSoftInputMode="stateHidden"
+			tools:ignore="LockedOrientationActivity">
+		</activity>
+
+		<activity
+			android:name="com.lisyx.tap.activity.ActivityDummy003"
+			android:screenOrientation="portrait"
+			android:windowSoftInputMode="stateHidden"
+			tools:ignore="LockedOrientationActivity">
+		</activity>
+
+		<activity
+			android:name="com.lisyx.tap.activity.ActivityDummy004"
+			android:screenOrientation="portrait"
+			android:windowSoftInputMode="stateHidden"
+			tools:ignore="LockedOrientationActivity">
+		</activity>
+
+		<activity
+			android:name="com.lisyx.tap.activity.ActivityDummy005"
+			android:screenOrientation="portrait"
+			android:windowSoftInputMode="stateHidden"
+			tools:ignore="LockedOrientationActivity">
+		</activity>
+
+		<activity
+			android:name="com.lisyx.tap.activity.ActivityDummy006"
+			android:screenOrientation="portrait"
+			android:windowSoftInputMode="stateHidden"
+			tools:ignore="LockedOrientationActivity">
+		</activity>
+
+		<activity
+			android:name="com.lisyx.tap.activity.ActivityDummy007"
+			android:screenOrientation="portrait"
+			android:windowSoftInputMode="stateHidden"
+			tools:ignore="LockedOrientationActivity">
+		</activity>
+
+		<activity
+			android:name="com.lisyx.tap.activity.ActivityDummy008"
+			android:screenOrientation="portrait"
+			android:windowSoftInputMode="stateHidden"
+			tools:ignore="LockedOrientationActivity">
+		</activity>
+
+		<activity
+			android:name="com.lisyx.tap.activity.ActivityDummy009"
+			android:screenOrientation="portrait"
+			android:windowSoftInputMode="stateHidden"
+			tools:ignore="LockedOrientationActivity">
+		</activity>
+
+		<activity
+			android:name="com.lisyx.tap.activity.ActivityDummy010"
+			android:screenOrientation="portrait"
+			android:windowSoftInputMode="stateHidden"
+			tools:ignore="LockedOrientationActivity">
+		</activity>
+
+		<activity
+			android:name="com.lisyx.tap.activity.ActivityDummy011"
+			android:screenOrientation="portrait"
+			android:windowSoftInputMode="stateHidden"
+			tools:ignore="LockedOrientationActivity">
+		</activity>
+
+		<activity
+			android:name="com.lisyx.tap.activity.ActivityDummy012"
+			android:screenOrientation="portrait"
+			android:windowSoftInputMode="stateHidden"
+			tools:ignore="LockedOrientationActivity">
+		</activity>
+
+		<activity
+			android:name="com.lisyx.tap.activity.ActivityDummy013"
+			android:screenOrientation="portrait"
+			android:windowSoftInputMode="stateHidden"
+			tools:ignore="LockedOrientationActivity">
+		</activity>
+
+		<activity
+			android:name="com.lisyx.tap.activity.ActivityDummy014"
+			android:screenOrientation="portrait"
+			android:windowSoftInputMode="stateHidden"
+			tools:ignore="LockedOrientationActivity">
+		</activity>
+
+		<activity
+			android:name="com.lisyx.tap.activity.ActivityDummy015"
+			android:screenOrientation="portrait"
+			android:windowSoftInputMode="stateHidden"
+			tools:ignore="LockedOrientationActivity">
+		</activity>
+
+		<activity
+			android:name="com.lisyx.tap.activity.CaptureScreen"
+			android:launchMode="singleInstance"
+			android:theme="@style/CaptureTheme">
+		</activity>
+
+		<service
+			android:name="com.lisyx.tap.service.DyAccessibilityService"
+			android:label="@string/dy_accessibility_service_label"
+			android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
+			<intent-filter>
+				<action android:name="android.accessibilityservice.AccessibilityService"/>
+			</intent-filter>
+			<meta-data
+				android:name="android.accessibilityservice"
+				android:resource="@xml/dy_accessibility_service_config"/>
+		</service>
+
+		<provider
+			android:name="android.support.v4.content.FileProvider"
+			android:authorities="${applicationId}.FileProvider"
+			android:exported="false"
+			android:grantUriPermissions="true">
+			<meta-data
+				android:name="android.support.FILE_PROVIDER_PATHS"
+				android:resource="@xml/file_paths"/>
+		</provider>
+
+	</application>
+
+</manifest>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+	</style>
+
+	<style name="Dialog" parent="Theme.AppCompat.Dialog">
+		<item name="android:windowBackground">@android:color/transparent</item>
+	</style>
+
+	<style name="CaptureTheme" parent="Theme.AppCompat.Light.NoActionBar">
+		<item name="android:windowFullscreen">true</item>
+		<item name="android:windowIsTranslucent">true</item>
+		<item name="android:windowBackground">@android:color/transparent</item>
+	</style>
+
+</resources>

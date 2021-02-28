@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="400dp"
+	android:layout_height="200dp"
+	android:background="#2000">
+
+	<View
+		android:id="@+id/bg"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"/>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:layout_alignParentRight="true"
+		android:gravity="center"
+		android:orientation="horizontal">
+
+		<RelativeLayout
+			android:layout_width="240dp"
+			android:layout_height="match_parent">
+
+			<TextView
+				android:id="@+id/aCenter"
+				android:layout_width="60dp"
+				android:layout_height="wrap_content"
+				android:layout_centerInParent="true"
+				android:layout_margin="10dp"
+				android:background="@drawable/app_btn"
+				android:gravity="center"
+				android:padding="10dp"
+				android:text="关闭"
+				android:textColor="#fff"
+				android:textSize="16sp"
+				android:visibility="visible"/>
+
+			<TextView
+				android:id="@+id/aTop"
+				android:layout_width="60dp"
+				android:layout_height="wrap_content"
+				android:layout_above="@id/aCenter"
+				android:layout_centerHorizontal="true"
+				android:layout_margin="10dp"
+				android:background="@drawable/app_btn"
+				android:gravity="center"
+				android:padding="10dp"
+				android:text="上"
+				android:textColor="#fff"
+				android:textSize="16sp"/>
+
+			<TextView
+				android:id="@+id/aBottom"
+				android:layout_width="60dp"
+				android:layout_height="wrap_content"
+				android:layout_below="@id/aCenter"
+				android:layout_centerHorizontal="true"
+				android:layout_margin="10dp"
+				android:background="@drawable/app_btn"
+				android:gravity="center"
+				android:padding="10dp"
+				android:text="下"
+				android:textColor="#fff"
+				android:textSize="16sp"/>
+
+			<TextView
+				android:id="@+id/aLeft"
+				android:layout_width="60dp"
+				android:layout_height="wrap_content"
+				android:layout_centerVertical="true"
+				android:layout_margin="10dp"
+				android:layout_toLeftOf="@id/aCenter"
+				android:background="@drawable/app_btn"
+				android:gravity="center"
+				android:padding="10dp"
+				android:text="左"
+				android:textColor="#fff"
+				android:textSize="16sp"/>
+
+			<TextView
+				android:id="@+id/aRight"
+				android:layout_width="60dp"
+				android:layout_height="wrap_content"
+				android:layout_centerVertical="true"
+				android:layout_margin="10dp"
+				android:layout_toRightOf="@id/aCenter"
+				android:background="@drawable/app_btn"
+				android:gravity="center"
+				android:padding="10dp"
+				android:text="右"
+				android:textColor="#fff"
+				android:textSize="16sp"/>
+
+			<TextView
+				android:id="@+id/aLeftTop"
+				android:layout_width="60dp"
+				android:layout_height="wrap_content"
+				android:layout_above="@id/aCenter"
+				android:layout_margin="10dp"
+				android:layout_toLeftOf="@id/aCenter"
+				android:background="@drawable/app_btn"
+				android:gravity="center"
+				android:padding="10dp"
+				android:text="左上"
+				android:textColor="#fff"
+				android:textSize="16sp"/>
+
+			<TextView
+				android:id="@+id/aRightTop"
+				android:layout_width="60dp"
+				android:layout_height="wrap_content"
+				android:layout_above="@id/aCenter"
+				android:layout_margin="10dp"
+				android:layout_toRightOf="@id/aCenter"
+				android:background="@drawable/app_btn"
+				android:gravity="center"
+				android:padding="10dp"
+				android:text="右上"
+				android:textColor="#fff"
+				android:textSize="16sp"/>
+
+			<TextView
+				android:id="@+id/aLeftBottom"
+				android:layout_width="60dp"
+				android:layout_height="wrap_content"
+				android:layout_below="@id/aCenter"
+				android:layout_margin="10dp"
+				android:layout_toLeftOf="@id/aCenter"
+				android:background="@drawable/app_btn"
+				android:gravity="center"
+				android:padding="10dp"
+				android:text="左下"
+				android:textColor="#fff"
+				android:textSize="16sp"/>
+
+			<TextView
+				android:id="@+id/aRightBottom"
+				android:layout_width="60dp"
+				android:layout_height="wrap_content"
+				android:layout_below="@id/aCenter"
+				android:layout_margin="10dp"
+				android:layout_toRightOf="@id/aCenter"
+				android:background="@drawable/app_btn"
+				android:gravity="center"
+				android:padding="10dp"
+				android:text="右下"
+				android:textColor="#fff"
+				android:textSize="16sp"/>
+
+		</RelativeLayout>
+
+		<LinearLayout
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:gravity="center"
+			android:orientation="vertical">
+
+			<TextView
+				android:id="@+id/guanyuClear"
+				android:layout_width="120dp"
+				android:layout_height="wrap_content"
+				android:layout_margin="10dp"
+				android:background="@drawable/app_btn"
+				android:gravity="center"
+				android:padding="10dp"
+				android:text="清除"
+				android:textColor="#fff"
+				android:textSize="16sp"/>
+
+			<TextView
+				android:id="@+id/guanyuRun"
+				android:layout_width="120dp"
+				android:layout_height="wrap_content"
+				android:layout_margin="10dp"
+				android:background="@drawable/app_btn"
+				android:gravity="center"
+				android:padding="10dp"
+				android:text="运行脚本"
+				android:textColor="#fff"
+				android:textSize="16sp"/>
+
+			<TextView
+				android:id="@+id/jump"
+				android:layout_width="120dp"
+				android:layout_height="wrap_content"
+				android:layout_margin="10dp"
+				android:background="@drawable/app_btn"
+				android:gravity="center"
+				android:padding="10dp"
+				android:text="跳起"
+				android:textColor="#fff"
+				android:textSize="16sp"/>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:gravity="center"
+			android:orientation="horizontal"
+			android:visibility="gone">
+
+			<TextView
+				android:id="@+id/test2"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_margin="10dp"
+				android:background="@drawable/app_btn"
+				android:padding="10dp"
+				android:text="截图"
+				android:textColor="#fff"
+				android:textSize="16sp"/>
+
+		</LinearLayout>
+
+	</LinearLayout>
+
+</RelativeLayout>

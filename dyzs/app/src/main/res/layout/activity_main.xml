@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="#242424">
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="vertical">
+
+		<FrameLayout
+			android:id="@+id/mainContiner"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:layout_weight="1"/>
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="48dp"
+			android:background="#000"
+			android:orientation="horizontal">
+
+			<ImageView
+				android:id="@+id/navHome"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:layout_weight="1"
+				android:scaleType="center"
+				android:src="@drawable/img_nav_home_gray"/>
+
+			<ImageView
+				android:id="@+id/navHot"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:layout_weight="1"
+				android:scaleType="center"
+				android:src="@drawable/img_nav_hot_gray"/>
+
+			<ImageView
+				android:id="@+id/navMine"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:layout_weight="1"
+				android:scaleType="center"
+				android:src="@drawable/img_nav_mine_gray"/>
+
+		</LinearLayout>
+
+	</LinearLayout>
+
+	<LinearLayout
+		android:id="@+id/logoPage"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:background="#fff"
+		android:clickable="true"
+		android:gravity="center"
+		android:orientation="vertical"
+		android:visibility="gone">
+
+		<ImageView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="200dp"
+			android:src="@drawable/img_qy_logo"/>
+
+	</LinearLayout>
+
+</RelativeLayout>

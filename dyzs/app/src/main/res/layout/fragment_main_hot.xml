@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="#242424">
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="vertical">
+
+		<LinearLayout
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="18dp"
+			android:layout_marginTop="10dp"
+			android:layout_marginBottom="10dp"
+			android:gravity="center_vertical"
+			android:orientation="horizontal">
+
+			<ImageView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:src="@drawable/logo"/>
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="10dp"
+				android:text="使用帮助"
+				android:textColor="#fff"
+				android:textSize="20sp"/>
+
+		</LinearLayout>
+
+		<ScrollView
+			android:layout_width="match_parent"
+			android:layout_height="match_parent">
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:gravity="left"
+				android:orientation="vertical"
+				android:padding="10dp">
+
+				<TextView
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:padding="10dp"
+					android:text="1、运行功能前，需要开启“悬浮球”和“无障碍服务”"
+					android:textColor="#fff"
+					android:textSize="16sp"/>
+
+				<TextView
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:padding="10dp"
+					android:text="2、需要定制点击类功能（不限抖音），可联系客服：QQ3478109973"
+					android:textColor="#fff"
+					android:textSize="16sp"/>
+
+				<TextView
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:padding="10dp"
+					android:text="3、随着抖音版本升级，系统可能不兼容，可联系客服处理"
+					android:textColor="#fff"
+					android:textSize="16sp"/>
+
+				<TextView
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:padding="10dp"
+					android:text="4、试用结束请联系客服购买激活码，50元终身维护，不再收费。"
+					android:textColor="#f1315d"
+					android:textSize="16sp"/>
+
+				<TextView
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:padding="10dp"
+					android:text="5、此软件可代理，代理价30元一个，最低10个起代，详情咨询客服"
+					android:textColor="#f1315d"
+					android:textSize="16sp"/>
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center_horizontal"
+					android:layout_marginTop="10dp"
+					android:padding="5dp"
+					android:text="开启“悬浮球”视频演示"
+					android:textColor="#fff"
+					android:textSize="12sp"/>
+
+				<com.lisyx.tap.view.ClickImageView
+					android:id="@+id/teachOpenBall"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center_horizontal"
+					android:src="@drawable/img_video_has"/>
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center_horizontal"
+					android:layout_marginTop="20dp"
+					android:padding="5dp"
+					android:text="开启“无障碍服务”视频演示"
+					android:textColor="#fff"
+					android:textSize="12sp"/>
+
+				<com.lisyx.tap.view.ClickImageView
+					android:id="@+id/teachOpenService"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center_horizontal"
+					android:src="@drawable/img_video_has"/>
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="20dp"
+					android:padding="5dp"
+					android:text="注：不同手机开启方法会有差异，若不能开启，请联系客服协助处理"
+					android:textColor="#fff"
+					android:textSize="10sp"/>
+
+			</LinearLayout>
+		</ScrollView>
+
+
+	</LinearLayout>
+
+</RelativeLayout>

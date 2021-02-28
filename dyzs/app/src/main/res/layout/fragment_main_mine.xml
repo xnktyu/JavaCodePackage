@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="#242424">
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="vertical">
+
+		<LinearLayout
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="18dp"
+			android:layout_marginTop="10dp"
+			android:layout_marginBottom="10dp"
+			android:gravity="center_vertical"
+			android:orientation="horizontal">
+
+			<ImageView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:src="@drawable/logo"/>
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="10dp"
+				android:text="千异千妖"
+				android:textColor="#fff"
+				android:textSize="20sp"/>
+
+		</LinearLayout>
+
+		<ScrollView
+			android:layout_width="match_parent"
+			android:layout_height="match_parent">
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:gravity="left"
+				android:orientation="vertical"
+				android:padding="10dp">
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:padding="10dp"
+					android:text="请先开启“悬浮球”和“无障碍服务”"
+					android:textColor="#f1315d"
+					android:textSize="14sp"/>
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:padding="10dp"
+					android:text="若有疑问，可联系客服：QQ3478109973"
+					android:textColor="#f1315d"
+					android:textSize="14sp"/>
+
+				<LinearLayout
+					android:id="@+id/deviceCon"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:gravity="center_vertical"
+					android:orientation="horizontal"
+					android:visibility="visible">
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="ID："
+						android:textColor="#fff"
+						android:textSize="14sp"/>
+
+					<EditText
+						android:id="@+id/info2"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_weight="1"
+						android:background="@drawable/edit_bg"
+						android:gravity="center"
+						android:inputType="textPersonName"
+						android:paddingLeft="10dp"
+						android:paddingTop="5dp"
+						android:paddingRight="10dp"
+						android:paddingBottom="5dp"
+						android:text="XXXXXXXXXXXXXXXX"
+						android:textColor="#fff"
+						android:textSize="14sp"/>
+
+					<TextView
+						android:id="@+id/copyCode2"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_margin="10dp"
+						android:background="@drawable/app_btn"
+						android:gravity="center"
+						android:padding="10dp"
+						android:text="拷贝ID"
+						android:textColor="#000"
+						android:textSize="16sp"/>
+
+				</LinearLayout>
+
+				<TextView
+					android:id="@+id/toActive"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_margin="10dp"
+					android:background="@drawable/app_btn"
+					android:gravity="center"
+					android:padding="10dp"
+					android:text="当前为试用版本，点击激活"
+					android:textColor="#000"
+					android:textSize="16sp"
+					android:visibility="visible"/>
+
+				<TextView
+					android:id="@+id/setBallPermission"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_margin="10dp"
+					android:background="@drawable/app_btn"
+					android:gravity="center"
+					android:padding="10dp"
+					android:text="设置悬浮球权限"
+					android:textColor="#000"
+					android:textSize="16sp"/>
+
+				<TextView
+					android:id="@+id/setAccessibilityPermission"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_margin="10dp"
+					android:background="@drawable/app_btn"
+					android:gravity="center"
+					android:padding="10dp"
+					android:text="开启无障碍服务"
+					android:textColor="#000"
+					android:textSize="16sp"/>
+
+				<TextView
+					android:id="@+id/findDevice"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_margin="10dp"
+					android:background="@drawable/app_btn"
+					android:gravity="center"
+					android:padding="10dp"
+					android:text="查看激活码"
+					android:textColor="#000"
+					android:textSize="16sp"
+					android:visibility="visible"/>
+
+			</LinearLayout>
+		</ScrollView>
+
+
+	</LinearLayout>
+
+</RelativeLayout>

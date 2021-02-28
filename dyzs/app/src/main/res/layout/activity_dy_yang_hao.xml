@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="#fff">
+
+	<ScrollView
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:gravity="left"
+			android:orientation="vertical"
+			android:padding="10dp">
+
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:gravity="center"
+				android:paddingTop="10dp"
+				android:text="智能养号 - 功能设置"
+				android:textColor="#99d2f9"
+				android:textSize="20sp"/>
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="10dp"
+				android:text="点赞几率（0 ~ 100）："
+				android:textColor="#000"
+				android:textSize="18sp"/>
+
+			<EditText
+				android:id="@+id/runCount"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="5dp"
+				android:layout_marginBottom="5dp"
+				android:background="@drawable/edit_bg"
+				android:gravity="left"
+				android:inputType="number"
+				android:paddingLeft="10dp"
+				android:paddingTop="5dp"
+				android:paddingRight="10dp"
+				android:paddingBottom="5dp"
+				android:text="10000"
+				android:textColor="#000"
+				android:textSize="18sp"/>
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="10dp"
+				android:text="运行速度（毫秒）："
+				android:textColor="#000"
+				android:textSize="18sp"/>
+
+			<EditText
+				android:id="@+id/runSpeed"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="5dp"
+				android:layout_marginBottom="5dp"
+				android:background="@drawable/edit_bg"
+				android:gravity="left"
+				android:inputType="number"
+				android:paddingLeft="10dp"
+				android:paddingTop="5dp"
+				android:paddingRight="10dp"
+				android:paddingBottom="5dp"
+				android:text="10000"
+				android:textColor="#000"
+				android:textSize="18sp"/>
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="10dp"
+				android:text="评论@："
+				android:textColor="#000"
+				android:textSize="18sp"/>
+
+			<EditText
+				android:id="@+id/runTarget"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="5dp"
+				android:layout_marginBottom="5dp"
+				android:background="@drawable/edit_bg"
+				android:gravity="left"
+				android:inputType="textPersonName"
+				android:paddingLeft="10dp"
+				android:paddingTop="5dp"
+				android:paddingRight="10dp"
+				android:paddingBottom="5dp"
+				android:text="10000"
+				android:textColor="#000"
+				android:textSize="18sp"/>
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="10dp"
+				android:text="运行记录："
+				android:textColor="#000"
+				android:textSize="18sp"
+				android:visibility="gone"/>
+
+			<EditText
+				android:id="@+id/runRecord"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="5dp"
+				android:layout_marginBottom="5dp"
+				android:background="@drawable/edit_bg"
+				android:gravity="left"
+				android:inputType="number"
+				android:paddingLeft="10dp"
+				android:paddingTop="5dp"
+				android:paddingRight="10dp"
+				android:paddingBottom="5dp"
+				android:text="10000"
+				android:textColor="#000"
+				android:textSize="18sp"
+				android:visibility="gone"/>
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="10dp"
+				android:text="话术设置："
+				android:textColor="#000"
+				android:textSize="18sp"/>
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:gravity="center"
+				android:orientation="horizontal">
+
+				<EditText
+					android:id="@+id/msgText0"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="5dp"
+					android:layout_marginBottom="5dp"
+					android:layout_weight="1"
+					android:background="@drawable/edit_bg"
+					android:gravity="left"
+					android:inputType="textMultiLine"
+					android:paddingLeft="10dp"
+					android:paddingTop="5dp"
+					android:paddingRight="10dp"
+					android:paddingBottom="5dp"
+					android:text="文本文本文本文本"
+					android:textColor="#000"
+					android:textSize="18sp"/>
+
+				<CheckBox
+					android:id="@+id/msgEnable0"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="10dp"/>
+
+			</LinearLayout>
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:gravity="center"
+				android:orientation="horizontal">
+
+				<EditText
+					android:id="@+id/msgText1"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="5dp"
+					android:layout_marginBottom="5dp"
+					android:layout_weight="1"
+					android:background="@drawable/edit_bg"
+					android:gravity="left"
+					android:inputType="textMultiLine"
+					android:paddingLeft="10dp"
+					android:paddingTop="5dp"
+					android:paddingRight="10dp"
+					android:paddingBottom="5dp"
+					android:text="文本文本文本文本"
+					android:textColor="#000"
+					android:textSize="18sp"/>
+
+				<CheckBox
+					android:id="@+id/msgEnable1"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="10dp"/>
+
+			</LinearLayout>
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:gravity="center"
+				android:orientation="horizontal">
+
+				<EditText
+					android:id="@+id/msgText2"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="5dp"
+					android:layout_marginBottom="5dp"
+					android:layout_weight="1"
+					android:background="@drawable/edit_bg"
+					android:gravity="left"
+					android:inputType="textMultiLine"
+					android:paddingLeft="10dp"
+					android:paddingTop="5dp"
+					android:paddingRight="10dp"
+					android:paddingBottom="5dp"
+					android:text="文本文本文本文本"
+					android:textColor="#000"
+					android:textSize="18sp"/>
+
+				<CheckBox
+					android:id="@+id/msgEnable2"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="10dp"/>
+
+			</LinearLayout>
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:gravity="center"
+				android:orientation="horizontal">
+
+				<EditText
+					android:id="@+id/msgText3"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="5dp"
+					android:layout_marginBottom="5dp"
+					android:layout_weight="1"
+					android:background="@drawable/edit_bg"
+					android:gravity="left"
+					android:inputType="textMultiLine"
+					android:paddingLeft="10dp"
+					android:paddingTop="5dp"
+					android:paddingRight="10dp"
+					android:paddingBottom="5dp"
+					android:text="文本文本文本文本"
+					android:textColor="#000"
+					android:textSize="18sp"/>
+
+				<CheckBox
+					android:id="@+id/msgEnable3"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="10dp"/>
+
+			</LinearLayout>
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:gravity="center"
+				android:orientation="horizontal">
+
+				<EditText
+					android:id="@+id/msgText4"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="5dp"
+					android:layout_marginBottom="5dp"
+					android:layout_weight="1"
+					android:background="@drawable/edit_bg"
+					android:gravity="left"
+					android:inputType="textMultiLine"
+					android:paddingLeft="10dp"
+					android:paddingTop="5dp"
+					android:paddingRight="10dp"
+					android:paddingBottom="5dp"
+					android:text="文本文本文本文本"
+					android:textColor="#000"
+					android:textSize="18sp"/>
+
+				<CheckBox
+					android:id="@+id/msgEnable4"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="10dp"/>
+
+			</LinearLayout>
+
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:gravity="center"
+				android:paddingTop="10dp"
+				android:text="功能演示视频"
+				android:textColor="#99d2f9"
+				android:textSize="20sp"/>
+
+			<com.lisyx.tap.view.ClickImageView
+				android:id="@+id/teachVideo"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center_horizontal"
+				android:layout_marginTop="10dp"
+				android:src="@drawable/img_video_has"/>
+
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:gravity="center"
+				android:paddingTop="10dp"
+				android:text="功能说明"
+				android:textColor="#99d2f9"
+				android:textSize="20sp"/>
+
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:padding="10dp"
+				android:text="Step 1、根据配置“点赞几率”，随机点赞"
+				android:textColor="#000"
+				android:textSize="16sp"/>
+
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:padding="10dp"
+				android:text="Step 2、若配置了“随机话术”，则有一半几率点击评论"
+				android:textColor="#000"
+				android:textSize="16sp"/>
+
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:padding="10dp"
+				android:text="Step 3、若配置了“评论@”，则会@某人加以评论"
+				android:textColor="#000"
+				android:textSize="16sp"/>
+
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:padding="10dp"
+				android:text="Step 4、划动到下一个"
+				android:textColor="#000"
+				android:textSize="16sp"/>
+
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:padding="10dp"
+				android:text="注：运行过程中点击悬浮球可停止运行。"
+				android:textColor="#000"
+				android:textSize="16sp"/>
+
+		</LinearLayout>
+	</ScrollView>
+
+</RelativeLayout>

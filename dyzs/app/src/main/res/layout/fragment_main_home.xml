@@ -1,0 +1,835 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="#242424">
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="vertical">
+
+		<LinearLayout
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="18dp"
+			android:layout_marginTop="10dp"
+			android:layout_marginBottom="10dp"
+			android:gravity="center_vertical"
+			android:orientation="horizontal">
+
+			<ImageView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:src="@drawable/logo"/>
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="10dp"
+				android:text="首页"
+				android:textColor="#fff"
+				android:textSize="20sp"/>
+
+		</LinearLayout>
+
+		<ScrollView
+			android:layout_width="match_parent"
+			android:layout_height="match_parent">
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:gravity="left"
+				android:orientation="vertical"
+				android:padding="10dp">
+
+
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal">
+
+					<LinearLayout
+						android:id="@+id/funcDyYingLiu"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_margin="5dp"
+						android:layout_weight="1"
+						android:background="@drawable/fun_bg"
+						android:gravity="center"
+						android:orientation="vertical"
+						android:padding="10dp">
+
+						<ImageView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:src="@drawable/bg_5"/>
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginTop="10dp"
+							android:text="智能引流"
+							android:textColor="#000"
+							android:textSize="16sp"/>
+
+					</LinearLayout>
+
+					<LinearLayout
+						android:id="@+id/funcDyYangHao"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_margin="5dp"
+						android:layout_weight="1"
+						android:background="@drawable/fun_bg"
+						android:gravity="center"
+						android:orientation="vertical"
+						android:padding="10dp">
+
+						<ImageView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:src="@drawable/bg_6"/>
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginTop="10dp"
+							android:text="智能养号"
+							android:textColor="#000"
+							android:textSize="16sp"/>
+
+					</LinearLayout>
+
+				</LinearLayout>
+
+
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal">
+
+					<LinearLayout
+						android:id="@+id/funcDyQuGuan"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_margin="5dp"
+						android:layout_weight="1"
+						android:background="@drawable/fun_bg"
+						android:gravity="center"
+						android:orientation="vertical"
+						android:padding="10dp">
+
+						<ImageView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:src="@drawable/bg_4"/>
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginTop="10dp"
+							android:text="智能取关"
+							android:textColor="#000"
+							android:textSize="16sp"/>
+
+					</LinearLayout>
+
+					<LinearLayout
+						android:id="@+id/funcDyLive"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_margin="5dp"
+						android:layout_weight="1"
+						android:background="@drawable/fun_bg"
+						android:gravity="center"
+						android:orientation="vertical"
+						android:padding="10dp">
+
+						<ImageView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:src="@drawable/bg_12"/>
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginTop="10dp"
+							android:text="直播引流"
+							android:textColor="#000"
+							android:textSize="16sp"/>
+
+					</LinearLayout>
+
+				</LinearLayout>
+
+
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal">
+
+					<LinearLayout
+						android:id="@+id/funcDyBothGuan"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_margin="5dp"
+						android:layout_weight="1"
+						android:background="@drawable/fun_bg"
+						android:gravity="center"
+						android:orientation="vertical"
+						android:padding="10dp">
+
+						<ImageView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:src="@drawable/bg_14"/>
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginTop="10dp"
+							android:text="互关互助"
+							android:textColor="#000"
+							android:textSize="16sp"/>
+
+					</LinearLayout>
+
+					<LinearLayout
+						android:id="@+id/funcDyFenGuan"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_margin="5dp"
+						android:layout_weight="1"
+						android:background="@drawable/fun_bg"
+						android:gravity="center"
+						android:orientation="vertical"
+						android:padding="10dp">
+
+						<ImageView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:src="@drawable/bg_18"/>
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginTop="10dp"
+							android:text="粉丝关注"
+							android:textColor="#000"
+							android:textSize="16sp"/>
+
+					</LinearLayout>
+
+				</LinearLayout>
+
+
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal">
+
+					<LinearLayout
+						android:id="@+id/funcDyShiXing"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_margin="5dp"
+						android:layout_weight="1"
+						android:background="@drawable/fun_bg"
+						android:gravity="center"
+						android:orientation="vertical"
+						android:padding="10dp">
+
+						<ImageView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:src="@drawable/bg_13"/>
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginTop="10dp"
+							android:text="私信粉丝"
+							android:textColor="#000"
+							android:textSize="16sp"/>
+
+					</LinearLayout>
+
+					<LinearLayout
+						android:id="@+id/funcDyPingXing"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_margin="5dp"
+						android:layout_weight="1"
+						android:background="@drawable/fun_bg"
+						android:gravity="center"
+						android:orientation="vertical"
+						android:padding="10dp">
+
+						<ImageView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:src="@drawable/bg_9"/>
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginTop="10dp"
+							android:text="私信评论"
+							android:textColor="#000"
+							android:textSize="16sp"/>
+
+					</LinearLayout>
+
+				</LinearLayout>
+
+
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal">
+
+					<LinearLayout
+						android:id="@+id/funcQQShiXing"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_margin="5dp"
+						android:layout_weight="1"
+						android:background="@drawable/fun_bg"
+						android:gravity="center"
+						android:orientation="vertical"
+						android:padding="10dp">
+
+						<ImageView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:src="@drawable/bg_13"/>
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginTop="10dp"
+							android:text="QQ私信"
+							android:textColor="#000"
+							android:textSize="16sp"/>
+
+					</LinearLayout>
+
+					<LinearLayout
+						android:id="@+id/funcDummy001"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_margin="5dp"
+						android:layout_weight="1"
+						android:background="@drawable/fun_bg"
+						android:gravity="center"
+						android:orientation="vertical"
+						android:padding="10dp">
+
+						<ImageView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:src="@drawable/bg_9"/>
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginTop="10dp"
+							android:text="收集群成员"
+							android:textColor="#000"
+							android:textSize="16sp"/>
+
+					</LinearLayout>
+
+				</LinearLayout>
+
+
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal">
+
+					<LinearLayout
+						android:id="@+id/funcDummy002"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_margin="5dp"
+						android:layout_weight="1"
+						android:background="@drawable/fun_bg"
+						android:gravity="center"
+						android:orientation="vertical"
+						android:padding="10dp">
+
+						<ImageView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:src="@drawable/bg_13"/>
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginTop="10dp"
+							android:text="发送成员私信"
+							android:textColor="#000"
+							android:textSize="16sp"/>
+
+					</LinearLayout>
+
+					<LinearLayout
+						android:id="@+id/funcDummy003"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_margin="5dp"
+						android:layout_weight="1"
+						android:background="@drawable/fun_bg"
+						android:gravity="center"
+						android:orientation="vertical"
+						android:padding="10dp">
+
+						<ImageView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:src="@drawable/bg_9"/>
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginTop="10dp"
+							android:text="上报群信息"
+							android:textColor="#000"
+							android:textSize="16sp"/>
+
+					</LinearLayout>
+
+				</LinearLayout>
+
+
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal">
+
+					<LinearLayout
+						android:id="@+id/funcDummy004"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_margin="5dp"
+						android:layout_weight="1"
+						android:background="@drawable/fun_bg"
+						android:gravity="center"
+						android:orientation="vertical"
+						android:padding="10dp">
+
+						<ImageView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:src="@drawable/bg_13"/>
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginTop="10dp"
+							android:text="群消息刷屏"
+							android:textColor="#000"
+							android:textSize="16sp"/>
+
+					</LinearLayout>
+
+					<LinearLayout
+						android:id="@+id/funcDummy005"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_margin="5dp"
+						android:layout_weight="1"
+						android:background="@drawable/fun_bg"
+						android:gravity="center"
+						android:orientation="vertical"
+						android:padding="10dp">
+
+						<ImageView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:src="@drawable/bg_9"/>
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginTop="10dp"
+							android:text="Dummy005"
+							android:textColor="#000"
+							android:textSize="16sp"/>
+
+					</LinearLayout>
+
+				</LinearLayout>
+
+
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal">
+
+					<LinearLayout
+						android:id="@+id/funcDummy006"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_margin="5dp"
+						android:layout_weight="1"
+						android:background="@drawable/fun_bg"
+						android:gravity="center"
+						android:orientation="vertical"
+						android:padding="10dp">
+
+						<ImageView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:src="@drawable/bg_13"/>
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginTop="10dp"
+							android:text="Dummy006"
+							android:textColor="#000"
+							android:textSize="16sp"/>
+
+					</LinearLayout>
+
+					<LinearLayout
+						android:id="@+id/funcDummy007"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_margin="5dp"
+						android:layout_weight="1"
+						android:background="@drawable/fun_bg"
+						android:gravity="center"
+						android:orientation="vertical"
+						android:padding="10dp">
+
+						<ImageView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:src="@drawable/bg_9"/>
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginTop="10dp"
+							android:text="Dummy007"
+							android:textColor="#000"
+							android:textSize="16sp"/>
+
+					</LinearLayout>
+
+				</LinearLayout>
+
+
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal">
+
+					<LinearLayout
+						android:id="@+id/funcDummy008"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_margin="5dp"
+						android:layout_weight="1"
+						android:background="@drawable/fun_bg"
+						android:gravity="center"
+						android:orientation="vertical"
+						android:padding="10dp">
+
+						<ImageView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:src="@drawable/bg_13"/>
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginTop="10dp"
+							android:text="Dummy008"
+							android:textColor="#000"
+							android:textSize="16sp"/>
+
+					</LinearLayout>
+
+					<LinearLayout
+						android:id="@+id/funcDummy009"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_margin="5dp"
+						android:layout_weight="1"
+						android:background="@drawable/fun_bg"
+						android:gravity="center"
+						android:orientation="vertical"
+						android:padding="10dp">
+
+						<ImageView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:src="@drawable/bg_9"/>
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginTop="10dp"
+							android:text="Dummy009"
+							android:textColor="#000"
+							android:textSize="16sp"/>
+
+					</LinearLayout>
+
+				</LinearLayout>
+
+
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal">
+
+					<LinearLayout
+						android:id="@+id/funcDummy010"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_margin="5dp"
+						android:layout_weight="1"
+						android:background="@drawable/fun_bg"
+						android:gravity="center"
+						android:orientation="vertical"
+						android:padding="10dp">
+
+						<ImageView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:src="@drawable/bg_13"/>
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginTop="10dp"
+							android:text="Dummy010"
+							android:textColor="#000"
+							android:textSize="16sp"/>
+
+					</LinearLayout>
+
+					<LinearLayout
+						android:id="@+id/funcDummy011"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_margin="5dp"
+						android:layout_weight="1"
+						android:background="@drawable/fun_bg"
+						android:gravity="center"
+						android:orientation="vertical"
+						android:padding="10dp">
+
+						<ImageView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:src="@drawable/bg_9"/>
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginTop="10dp"
+							android:text="Dummy011"
+							android:textColor="#000"
+							android:textSize="16sp"/>
+
+					</LinearLayout>
+
+				</LinearLayout>
+
+
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal">
+
+					<LinearLayout
+						android:id="@+id/funcDummy012"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_margin="5dp"
+						android:layout_weight="1"
+						android:background="@drawable/fun_bg"
+						android:gravity="center"
+						android:orientation="vertical"
+						android:padding="10dp">
+
+						<ImageView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:src="@drawable/bg_13"/>
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginTop="10dp"
+							android:text="Dummy012"
+							android:textColor="#000"
+							android:textSize="16sp"/>
+
+					</LinearLayout>
+
+					<LinearLayout
+						android:id="@+id/funcDummy013"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_margin="5dp"
+						android:layout_weight="1"
+						android:background="@drawable/fun_bg"
+						android:gravity="center"
+						android:orientation="vertical"
+						android:padding="10dp">
+
+						<ImageView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:src="@drawable/bg_9"/>
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginTop="10dp"
+							android:text="Dummy013"
+							android:textColor="#000"
+							android:textSize="16sp"/>
+
+					</LinearLayout>
+
+				</LinearLayout>
+
+
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal">
+
+					<LinearLayout
+						android:id="@+id/funcDummy014"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_margin="5dp"
+						android:layout_weight="1"
+						android:background="@drawable/fun_bg"
+						android:gravity="center"
+						android:orientation="vertical"
+						android:padding="10dp">
+
+						<ImageView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:src="@drawable/bg_13"/>
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginTop="10dp"
+							android:text="Dummy014"
+							android:textColor="#000"
+							android:textSize="16sp"/>
+
+					</LinearLayout>
+
+					<LinearLayout
+						android:id="@+id/funcDummy015"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_margin="5dp"
+						android:layout_weight="1"
+						android:background="@drawable/fun_bg"
+						android:gravity="center"
+						android:orientation="vertical"
+						android:padding="10dp">
+
+						<ImageView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:src="@drawable/bg_9"/>
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginTop="10dp"
+							android:text="Dummy015"
+							android:textColor="#000"
+							android:textSize="16sp"/>
+
+					</LinearLayout>
+
+				</LinearLayout>
+
+
+				<LinearLayout
+					android:id="@+id/debugCon"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal">
+
+					<LinearLayout
+						android:id="@+id/openBall"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_margin="5dp"
+						android:layout_weight="1"
+						android:background="@drawable/fun_bg"
+						android:gravity="center"
+						android:orientation="vertical"
+						android:padding="10dp">
+
+						<ImageView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:src="@drawable/bg_13"/>
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginTop="10dp"
+							android:text="打开悬浮球"
+							android:textColor="#000"
+							android:textSize="16sp"/>
+
+					</LinearLayout>
+
+					<LinearLayout
+						android:id="@+id/deviceInfo"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_margin="5dp"
+						android:layout_weight="1"
+						android:background="@drawable/fun_bg"
+						android:gravity="center"
+						android:orientation="vertical"
+						android:padding="10dp">
+
+						<ImageView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:src="@drawable/bg_9"/>
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginTop="10dp"
+							android:text="设备信息"
+							android:textColor="#000"
+							android:textSize="16sp"/>
+
+					</LinearLayout>
+
+				</LinearLayout>
+
+
+			</LinearLayout>
+		</ScrollView>
+
+	</LinearLayout>
+
+</RelativeLayout>

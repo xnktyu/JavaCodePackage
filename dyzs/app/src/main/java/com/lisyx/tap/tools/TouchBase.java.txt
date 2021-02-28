@@ -1,0 +1,67 @@
+package com.lisyx.tap.tools;
+
+import com.lisyx.tap.tools.DEFAULT.TouchDevice;
+import com.lisyx.tap.utils.SysUtils;
+
+import java.util.ArrayList;
+
+public abstract class TouchBase
+{
+	private static TouchBase touchBase = null;
+
+	public static TouchBase getTouchBase()
+	{
+		if (touchBase == null)
+		{
+			if (SysUtils.isHUAWEIP7L07())
+				touchBase = new com.lisyx.tap.tools.HUAWEIP7L07.TouchDevice();
+			else if (SysUtils.isMI4LTE())
+				touchBase = new com.lisyx.tap.tools.MI4LTE.TouchDevice();
+			else if (SysUtils.isHUAWEIVNSAL00())
+				touchBase = new com.lisyx.tap.tools.HUAWEIVNSAL00.TouchDevice();
+			else
+				touchBase = new TouchDevice();
+		}
+		return touchBase;
+	}
+
+	public abstract ArrayList<String> touchDown(int x, int y);
+
+	public abstract ArrayList<String> touchMove(int x, int y);
+
+	public abstract ArrayList<String> touchUp();
+
+	public ArrayList<String> tap(int x, int y)
+	{
+		ArrayList<String> list = touchDown(x, y);
+		list.addAll(touchUp());
+		return list;
+	}
+
+	public ArrayList<String> swipe(int x1, int y1, int x2, int y2, int space)
+	{
+		ArrayList<String> list = touchDown(x1, y1);
+
+		int xd = x2 - x1;
+		int yd = y2 - y1;
+
+		double distance = Math.sqrt(xd * xd + yd * yd);
+
+		// 步数
+		int step = (int) (distance / space);
+
+		// 步长
+		int xs = xd / step;
+		int ys = yd / step;
+
+		for (int i = 1; i <= step; i++)
+		{
+			int x = x1 + i * xs;
+			int y = y1 + i * ys;
+			list.addAll(touchMove(x, y));
+		}
+
+		list.addAll(touchUp());
+		return list;
+	}
+}
