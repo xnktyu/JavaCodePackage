@@ -1,0 +1,68 @@
+﻿C:\Users\xnktyu\Desktop
+
+
+
+	
+产品	LG GSM5A31 22M35
+厂商	LG
+固件程序日期	2014 年 11 周 (非显示器制造日期)
+屏幕尺寸	21.7 英寸 (48 厘米 x 27 厘米)
+显示比例	宽屏 16 : 9
+分辨率	1920 x 1080 32 位真彩色
+	
+
+
+
+TESSDATA_PREFIX
+C:\Program Files (x86)\Tesseract-OCR\tessdata
+
+
+
+pip国内的一些镜像
+
+  阿里云 https://mirrors.aliyun.com/pypi/simple/
+  中国科技大学 https://pypi.mirrors.ustc.edu.cn/simple/
+  豆瓣(douban) http://pypi.douban.com/simple/
+  清华大学 https://pypi.tuna.tsinghua.edu.cn/simple/
+  中国科学技术大学 http://pypi.mirrors.ustc.edu.cn/simple/
+
+修改源方法：
+
+临时使用：
+可以在使用pip的时候在后面加上-i参数，指定pip源
+pip install pyautogui -i https://mirrors.aliyun.com/pypi/simple
+pip install pytesseract -i https://mirrors.aliyun.com/pypi/simple
+pip install playsound -i https://mirrors.aliyun.com/pypi/simple
+
+python教程
+http://www.runoob.com/python/python-install.html
+
+
+pyautogui 安装教程
+https://jingyan.baidu.com/article/0964eca25d7a6d8285f536f9.html
+
+
+
+pyautogui 使用
+https://blog.csdn.net/ibiao/article/details/77859997
+
+
+python在windows系统上模拟鼠标点击
+https://jingyan.baidu.com/article/39810a23440b20b636fda621.html
+
+
+	You are using pip version 10.0.1, however version 18.1 is available.
+	You should consider upgrading via the 'python -m pip install --upgrade pip' command.
+
+
+python 文字识别
+https://blog.csdn.net/qiushi_1990/article/details/78041375
+https://www.cnblogs.com/syqlp/p/5462459.html
+https://blog.csdn.net/qq_14998713/article/details/78824859
+
+
+
+<li class="([\w]+)"><a href="javascript:;" chapterid="([\w]+)" pagecount="([\w]+)">([^<]+)<span>([\w]+)</span></a></li>
+$1-$2-$3-$4-$5
+
+
